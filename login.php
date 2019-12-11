@@ -7,9 +7,8 @@ $password = '';
 if(isset($_POST['submit'])){
     $email = isset($_POST['email'])? $_POST['email'] : '' ;
     $password =  $_POST['password'] ?? '' ;
-
     $sql = "SELECT id,email FROM user WHERE email=? AND password=? LIMIT 1";
-    $row = sql_fetch_one($sql, 'ss', [$email, $password]); 
+    $row = sql_fetch_one($sql, 'ss', [$email, sha1($password)]); 
     if($row)
     {
         $_SESSION['user_id'] = $row['id'] ;

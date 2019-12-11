@@ -3,6 +3,7 @@ include_once 'config.php';
 include_once 'includes/functions.php';
 require_login();
 
+echo password_hash('admin', 1);
 $id = $_GET['employee_id'] ?? null;
 $error =  $success  = null;
 $sql = "SELECT * FROM employee WHERE id=?";
