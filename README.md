@@ -1,5 +1,7 @@
 # Npower CRUD Assessment 
 
+Employee management system.
+
 ## Setup
 
 Import *db.sql* using php my admin
